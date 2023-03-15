@@ -1,0 +1,2 @@
+1. Header styling and re-design Store interface
+2. Settings design (current)
