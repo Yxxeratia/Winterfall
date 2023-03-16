@@ -14,10 +14,15 @@ import {faCog} from '@fortawesome/free-solid-svg-icons'
 import {faGaugeHigh} from '@fortawesome/free-solid-svg-icons'
 import {faAngleRight} from '@fortawesome/free-solid-svg-icons'
 import {faSignOut} from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretLeft } from '@fortawesome/free-solid-svg-icons';
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faPause } from '@fortawesome/free-solid-svg-icons';
 
 /* add icons to the library */
 
-library.add(faDiscord, faCog, faGaugeHigh, faAngleRight, faSignOut)
+library.add(faDiscord, faCog, faGaugeHigh, faAngleRight, faSignOut, faCaretDown, faCaretLeft, faCaretRight, faPlay, faPause);
 import './assets/main.scss'
 import router from './router'
 

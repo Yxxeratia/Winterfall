@@ -3,7 +3,6 @@ import Header from '@/components/Header.vue';
 import OngoingBanners from '../components/Home/OngoingBanners.vue';
 import WorldMap from '@/components/Home/WorldMap.vue';
 
-
 export default {
   components: {Header, OngoingBanners, WorldMap},
 }

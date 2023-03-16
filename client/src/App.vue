@@ -8,7 +8,10 @@ declare module 'vue-router' {
   }
 }
 
+import MusicPlayer from '@/components/MusicPlayer.vue';
+
 export default {
+  components: {MusicPlayer},
   methods: {
     changeBGColor(bgColor: string, fontColor: string) {
       document.documentElement.style.setProperty('--bg-color', bgColor);
@@ -33,7 +36,7 @@ export default {
       document.documentElement.style.setProperty('--font-color', color);
     }
   },
-  mounted() {
+  async mounted() {
     //default 
     if (!localStorage.getItem('bg') || localStorage.getItem('bg') === '#181818') {
       this.changeBGColor('#181818', 'rgba(235, 235, 235, 0.64)');
@@ -46,6 +49,7 @@ export default {
 </script>
 
 <template>
+  <MusicPlayer/>
   <div id="app">  
     <router-view v-slot="{Component, route}">
       <Transition :name = "route.meta.transition" :key="route.name" appear>
@@ -67,7 +71,7 @@ export default {
 }
 
 .fadeback-leave-active, .fade-leave-active {
-    position: absolute;
+  position: absolute;
 }
 
 .fade-enter-from, .fade-leave-to, .fadeback-enter-from, .fadeback-leave-to {
@@ -75,10 +79,10 @@ export default {
   opacity: 0;
 }
 .fade-enter-from, .fadeback-leave-to {
-    transform: translate(100px, 0);
+  transform: translate(100px, 0);
 }
 .fade-leave-to, .fadeback-enter-from {
-    transform: translate(-100px, 0);
+  transform: translate(-100px, 0);
 }
 
 </style>

@@ -17,6 +17,7 @@ const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const cors_1 = __importDefault(require("cors"));
 const morgan_1 = __importDefault(require("morgan"));
+const get_tracks_1 = __importDefault(require("./get-tracks"));
 const get_banners_1 = __importDefault(require("./get-banners"));
 const get_roster_1 = __importDefault(require("./get-roster"));
 const get_inventory_1 = __importDefault(require("./get-inventory"));
@@ -27,6 +28,10 @@ app.use((0, morgan_1.default)('combined'));
 app.use(body_parser_1.default.json());
 app.use((0, cors_1.default)());
 const port = process.env.PORT;
+app.get('/tracks', (req, res) => {
+    const tracks = get_tracks_1.default.execute();
+    res.send(tracks);
+});
 app.get('/banners', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const connection = yield db_connection_1.default.execute();
     if (!connection) {

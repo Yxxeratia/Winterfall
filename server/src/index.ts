@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import morgan from 'morgan';
 
+import getTracks from './get-tracks';
 import getBanners from './get-banners';
 import getRoster from './get-roster';
 import getInventory from './get-inventory';
@@ -17,6 +18,11 @@ app.use(cors());
 
 const port = process.env.PORT;
 
+
+app.get('/tracks', (req, res) => {
+    const tracks = getTracks.execute();
+    res.send(tracks);
+})
 
 app.get('/banners', async (req, res) => {
     const connection = await dbConnection.execute();
